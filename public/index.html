@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE - Agent Certification Engine Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ACE - Agent Certification Engine Quiz</h1>
+            <p>Welcome to the Open Source Summit session on ACE! We have prepared a quick quiz to test your knowledge about the framework.</p>
+            <p>Please check out our repository for more details: <a href="https://agentcert.github.io/ace-monorepo/" target="_blank">ACE Monorepo</a></p>
+        </header>
+
+        <form id="quiz-form">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="quiz-questions" id="quiz-container">
+                <!-- Questions will be dynamically loaded here by JS to keep HTML clean -->
+            </div>
+
+            <button type="submit" id="submit-btn">Submit Quiz</button>
+            <div id="status-message"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

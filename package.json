@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakshabesafe/Acequestionengibe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rakshabesafe/Acequestionengibe/issues"
+  },
+  "homepage": "https://github.com/rakshabesafe/Acequestionengibe#readme",
+  "dependencies": {
+    "axios": "^1.18.0",
+    "express": "^5.2.1"
+  }
+}

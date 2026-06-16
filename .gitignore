@@ -1,0 +1,3 @@
+node_modules/
+package-lock.json
+server_output.log\nserver_output_verify.log

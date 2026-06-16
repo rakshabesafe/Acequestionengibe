@@ -178,6 +178,31 @@ app.post('/submit', async (req, res) => {
 });
 
 
+app.get('/dump', async (req, res) => {
+    if (!SLACK_WEBHOOK_URL) {
+        return res.status(500).json({ error: 'SLACK_WEBHOOK_URL is not set.' });
+    }
+
+    let dumpText = '*Current Submissions State:*\n';
+    if (Object.keys(submissions).length === 0) {
+        dumpText += 'No submissions yet.';
+    } else {
+        for (const [email, attempts] of Object.entries(submissions)) {
+            dumpText += `${email}: ${attempts} attempt(s)\n`;
+        }
+    }
+
+    try {
+        await axios.post(SLACK_WEBHOOK_URL, {
+            text: dumpText
+        });
+        res.status(200).json({ message: 'State dumped to Slack.' });
+    } catch (error) {
+        console.error('Error posting dump to Slack:', error.message);
+        res.status(500).json({ error: 'Failed to post dump to Slack.' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

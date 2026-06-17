@@ -41,7 +41,7 @@ const questions = [
     },
     {
         id: "q5",
-        text: "According to the 'Measuring Agents in Production' study referenced, what is the #1 unresolved challenge in production AI deployment?",
+        text: "According to Presentation, , what is the #1 unresolved challenge in production AI deployment?",
         options: [
             "High latency",
             "Inference cost",
@@ -98,6 +98,26 @@ const questions = [
             "A Legal contract review agent",
             "An SRE (Site Reliability Engineering) agent"
         ]
+    },
+    {
+        id: "q11",
+        text: "What module represents the fault library",
+        options: [
+            "SRE library",
+            "ITOps",
+            "Kubernetes",
+            "Chaos Mesh"
+        ]
+    },
+    {
+        id: "q12",
+        text: "What is the sandbox environment supported ? A. Kubernetes, B. Azure foundry C. AWS agentcore D. Openstack",
+        options: [
+            "A. Kubernetes",
+            "B. Azure foundry",
+            "C. AWS agentcore",
+            "D. Openstack"
+        ]
     }
 ];
 
@@ -122,7 +142,7 @@ questions.forEach((q, index) => {
         radio.type = 'radio';
         radio.name = q.id;
         radio.value = opt;
-        radio.required = true;
+
 
         label.appendChild(radio);
         label.appendChild(document.createTextNode(opt));
@@ -169,7 +189,7 @@ document.getElementById('quiz-form').addEventListener('submit', async (e) => {
 
         if (response.ok) {
             statusMessage.className = 'success';
-            statusMessage.textContent = 'Thank you! Your answers have been submitted successfully.';
+            statusMessage.textContent = data.message || 'Thank you! Your answers have been submitted successfully.';
             e.target.reset(); // clear form
         } else {
             statusMessage.className = 'error';
